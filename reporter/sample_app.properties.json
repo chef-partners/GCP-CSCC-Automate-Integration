@@ -1,0 +1,23 @@
+{
+    "properties":
+{
+    "automatePublicIp":"35.197.241.246",
+    "scanProfiles":["compliance://admin/cis-gcp-benchmark-level2#1.0.0-1"],
+    "automateApiToken":"K1NdfLHEU8bllp8SFqCVoyqXWQo=",
+    "organization": "997482578299",
+    "source": "12345678911",
+    "cscc":"path/to/cscckey.json",
+    "serviceAccount":{
+        "type": "service_account",
+        "project_id": "example-project-id",
+        "private_key_id": "rt99bbex47281d9493q0b7ee3d2db09c8e4e65c8",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCq+uIRfHHzX7/m\n02ppKBUkT5CkhQkzQf9k04fS+cmU4/jlLne+aHacPGfTigv0IFpRth0fpwDkKKNg\n9k5r8UO6KD6W/Q9fGZ3NQRyOHfd+vD50y+6dQ+Odo82Oohl+HFq1jKZE7r8e7czQ\noBafcTg+CmtQR334OLhXHnho7U3O7IHMPlhqNDMn+SVzQa6h0+pkBeiLwZrS5cNr\n8k9DL2ncEXI6WbBzG4CqaK0i3IAwnjMCGcuKxAHaZCurNuxTxDaYQNUbwWX9dZ5e\nsF20bE/i29nIPEcJ56VYWgAGfGaRhGMd56kOVcn7XGz8syJPLeDdJbit8xukYgkb\nmTk2Lry/AgMBAAECggEAOmvY/PKRmP/5eSx56o5okuyg1qYiW6JMWq4wdbUl3Lr8\nm4qCHcxh4sZ9D3nW1caMNelNEDinBE6ibIoch6N7actAf6TeMLd3BOAfmqvAmkxF\n5vCbip7c0kta/EaFAWM811XEpj8RjMbiOdLJiBdOiVxUCK007LCsxA/EQs36zR3Q\ny8W2q8d4FP04ahBrtqI9kSWFgMmRfe9nrHD33xT2yVdXCT6ToTm7yRVMfKUIaCwU\nyQcxd2RSmo+LXT7BTSImBZioiXeDAOX2PLN/3EmLqJK0PbNJ3D4lkRDMgpMhkEBq\nWOxZkW3H61kFKQOoGJK61t732SxZe2uY47deGml58QKBgQDroPGp178YaQ/kvQrI\nf0JYW8atvwJd5Q7EQdIYI1MUaj7VDACtBUPqU98yjwsPDmM+yykwNfG6Iz8A7Vnx\nHG0k6O+YXnikF+AL+dHCPLuYW7L3+dXfZ8neeFtO48FXq69u+21p5iF5vlHSoBYS\naYqwMrE56eGG/60dMqmLlNR4aQKBgQC5wxnlMHK0j1yEutLQJoB3NT4uk0bdouos\nRCBq431J1ma5evhpyId4faU6w4qYqemu7z/HtzV3KP8HujcJmV2YVeYVDpbMnY/p\nUQPS7WQZa4kV7qTgBOPUWd5pk94HDQtaNVr/PhHu2Lava1zzCidaNv4ba0AFnlOh\nZEB4pRKm5wKBgAmcQd8MhqXHOze4IiV1U05pR9w0SzNrMUP970S+xBe0EaX83FYy\nPcfj7dmRDgFqM9AO1zo5KQfPgjVWePGlmCoGOid7yu3eb2vtn4mNkpUvQEhu7zMy\nd4BUZlz8WxlpTjl3lcnY8gqWIZ42m0/a8CYpmyLikClCalwjgdjIlDXpAoGBAI8j\nMdnzaf+NlCnGV1kCweyZPy/eVjXEKhMv75bNciYqKf90LOQ+G30Ru/a65Bncm28r\ndYbruiv2kAUhTPV9kqwmTGMfWb2TD2gl//9Q4tffj8MxnyPrQK7JDONniCcAuyWo\nhVS2PFVB8grbfMTdpxMR2t2/15Y8uI5c1HziHawzAoGBAIMfXw+VcGEn/bKSrBwe\nSdARW+wEP4vUK2IhMR9p30pnIoN1kMv/Z06QeKHimyCEjyE69iSigTbyq0qKpyAb\nvrqfYb0IEgOc+VqzclYQvcpAjSGO9ICKqyqBhiMAewtpFlFtlkQk2NI1WYls4AZM\nbQmHlcV7l1+/zPzopfwvoqVU\n-----END PRIVATE KEY-----\n",
+        "client_email": "example@example-project.iam.gserviceaccount.com",
+        "client_id": "999111177371768675999",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/terraform%40dmurray-project.iam.gserviceaccount.com"
+      }
+}
+}

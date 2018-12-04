@@ -1,0 +1,12 @@
+{
+    "properties":
+{
+    "automatePublicIp":"",
+    "scanProfiles":[""],
+    "automateApiToken":"",
+    "organization": "",
+    "sourceId": "",
+    "cscc":"",
+    "serviceAccount":{}
+}
+}
