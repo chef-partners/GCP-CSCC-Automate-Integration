@@ -1,6 +1,6 @@
 # GCP-CSCC-Automate-Integration
 
-![Google Cloud](/docs/images/logo_cloud_192.png)
+![Google Cloud](logo_cloud_192.png)
 
 ## Overview
 
