@@ -42,9 +42,13 @@ The Chef Automate integration with Google CSCC has been developed in order to al
 #### Installation Steps
 
 $ git clone https://github.com/chef-partners/GCP-CSCC-Automate-Integration.git
+
 $ cd reporter  
+
 $ python3.7 -m venv tsenv
+
 $ . tsenv/bin/activate
+
 $ pip3.7 install -r requirements.txt
 
 Add your configuration to "reporter/app/app.properties.json", an example version is available in the reporter directory "sample_app.properties.json"
