@@ -1,5 +1,3 @@
-# GCP-CSCC-Automate-Integration
-
 ![Google Cloud](logo_cloud_192.png)
 
 ## Overview
@@ -22,9 +20,9 @@ The Chef Automate integration with Google CSCC has been developed in order to al
 * [Google CSCC (Beta) Feature Enabled](https://cloud.google.com/security-command-center/)
 * [Chef automate server installation](https://docs.chef.io/chef_automate.html)
 
-## Configuration
+### Configuration
 
-### Google GCP Configuration
+#### Google GCP Configuration
 
 - Assumption that gcloud SDK is installed
 - Create or update a Service Account that has Cloud Compute Instance create role for installing integration tools
