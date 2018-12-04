@@ -66,5 +66,6 @@ Add your configuration to "reporter/app/app.properties.json", an example version
 Once configuration is complete the reporter app can be launch. See sample_app.properties.json for an example of complete configuration.
 
 $ cd reporter
+
 $ python3.7 app/app.py 
 
