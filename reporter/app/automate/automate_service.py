@@ -19,8 +19,9 @@ class AutomateService:
     managerId = self.__getGcpNodeManager()  
     scanProfiles = self.properties.scanProfiles
     self.addScanProfiles(scanProfiles)
+    startTime = self.__formatDate(datetime.datetime.utcnow() + datetime.timedelta(minutes = 1))
     body = {"type": "exec", "tags": [], "name": f"cscc-scan-{datetime.datetime.now()}", "profiles": scanProfiles,
-    "node_selectors": [{"manager_id": managerId, "filters": []}], "recurrence": ""}
+    "node_selectors": [{"manager_id": managerId, "filters": []}], "recurrence": f"DTSTART={startTime};FREQ=HOURLY;INTERVAL=1"}
     return self.apiClient.post("compliance/scanner/jobs", body)
 
   def createCloudManagementService(self, serviceAccount):

@@ -29,7 +29,7 @@ The Chef Automate integration with Google CSCC has been developed in order to al
 - Create Service Account for CSCC Access, Retrieve Key and Add Admin role:
 1. gcloud iam service-accounts create <SERVICE_ACCOUNT> --display-name "service account for CSCC Integration" --project <PROJECT_ID>
 2. gcloud iam service-accounts keys create <KEY_FILE_NAME.json> --iam-account <SERVICE_ACCOUNT>@<PROJECT_ID>.iam.gserviceaccount.com
-3. gcloud beta organizations add-iam-policy-binding <ORGANIZATION_ID> --member="serviceAccount:<SERVICE_ACCOUNT>@<PROJECT_ID>.iam.gserviceaccount.com" --role='roles/securitycenter.adminEditor'
+3. gcloud beta organizations add-iam-policy-binding <ORGANIZATION_ID> --member="serviceAccount:<SERVICE_ACCOUNT>@<PROJECT_ID>.iam.gserviceaccount.com" --role='roles/securitycenter.adminEditor' --role='roles/compute.admin'
 - Enable the Google CSCC API for the Service Account Project going to https://console.developers.google.com/apis/api/securitycenter.googleapis.com/overview?project=YOUR_PROJECT_ID and clicking Enable
 
 ### Install Google CSCC Integration for Chef
@@ -59,7 +59,7 @@ Add your configuration to "reporter/app/app.properties.json", an example version
 * organization: The Organization Id
 * source: The source id of the Chef Automate CSCC source - recorded when you added the Integration in Google Marketplace
 * cscc: The Path to your CSCC json key file created at Step 2 above.
-* serviceAccount: The gcloud service account used to create the GCP Node Integration in Step 1 above.
+* serviceAccount: The gcloud service account used to create the GCP Node Integration in Step 1 above. Requires compute.admin role
 
 #### Launch the App
 
