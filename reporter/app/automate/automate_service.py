@@ -19,7 +19,7 @@ class AutomateService:
     managerId = self.__getGcpNodeManager()  
     scanProfiles = self.properties.scanProfiles
     self.addScanProfiles(scanProfiles)
-    startTime = self.__formatDate(datetime.datetime.utcnow() + datetime.timedelta(minutes = 1))
+    startTime = self.__formatScanDateTime(datetime.datetime.utcnow() + datetime.timedelta(minutes = 1))
     body = {"type": "exec", "tags": [], "name": f"cscc-scan-{datetime.datetime.now()}", "profiles": scanProfiles,
     "node_selectors": [{"manager_id": managerId, "filters": []}], "recurrence": f"DTSTART={startTime};FREQ=HOURLY;INTERVAL=1"}
     return self.apiClient.post("compliance/scanner/jobs", body)
@@ -117,6 +117,10 @@ class AutomateService:
 
   def __formatDate(self, date):
     formattedDate = date.strftime("%Y-%m-%dT%H:%M:%S%Z")
+    return formattedDate + "Z"
+
+  def __formatScanDateTime(self, date):
+    formattedDate = date.strftime("%Y%m%dT%H%M%S%Z")
     return formattedDate + "Z"
 
   def __checkDuplicates(self, reportList):

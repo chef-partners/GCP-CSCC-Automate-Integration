@@ -5,7 +5,7 @@
     "scanProfiles":[""],
     "automateApiToken":"",
     "organization": "",
-    "sourceId": "",
+    "source": "",
     "cscc":"",
     "serviceAccount":{}
 }
