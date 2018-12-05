@@ -30,7 +30,7 @@ The Chef Automate integration with Google Cloud SCC has been developed in order 
 1. gcloud iam service-accounts create <SERVICE_ACCOUNT> --display-name "service account for Cloud SCC Integration" --project <PROJECT_ID>
 2. gcloud iam service-accounts keys create <KEY_FILE_NAME.json> --iam-account <SERVICE_ACCOUNT>@<PROJECT_ID>.iam.gserviceaccount.com
 3. gcloud beta organizations add-iam-policy-binding <ORGANIZATION_ID> --member="serviceAccount:<SERVICE_ACCOUNT>@<PROJECT_ID>.iam.gserviceaccount.com" --role='roles/securitycenter.adminEditor' --role='roles/compute.admin'
-- Enable the Google Cloud SCC API for the Service Account Project going to https://console.developers.google.com/apis/api/securitycenter.googleapis.com/overview?project=YOUR_PROJECT_ID and clicking Enable
+4. Enable the Google Cloud SCC API for the Service Account Project going to https://console.developers.google.com/apis/api/securitycenter.googleapis.com/overview?project=YOUR_PROJECT_ID and clicking Enable
 
 ### Install Google Cloud SCC Integration for Chef
 
