@@ -64,7 +64,6 @@ class CsccService:
     def buildFindings(self, failedControls):
         findings = []
         for control in failedControls:
-            publicIp = 
             finding = {'name': str(uuid.uuid4()).replace('-', ''),
             'parent': self.securitySource,
             'resource_name': f"{self.orgParent}/projects/{control.get('node_name')}",
