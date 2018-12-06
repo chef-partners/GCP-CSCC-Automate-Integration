@@ -69,7 +69,7 @@ class CsccService:
             'resource_name': f"{self.orgParent}/projects/{control.get('node_name')}",
             'state':'ACTIVE',
             'category': control.get('control_title'),
-            'external_uri': f"https://35.197.241.246/compliance/reporting/nodes/{control.get('node_id')}",
+            'external_uri': f"https://{self.properties.automateUrl}/compliance/reporting/nodes/{control.get('node_id')}",
             'source_properties': self.buildSourceProperties(control),
             'security_marks': {},
             'event_time': self.timestamp(datetime.now()),
