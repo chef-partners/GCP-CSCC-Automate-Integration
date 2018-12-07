@@ -5,7 +5,7 @@
     "scanProfiles":["compliance://admin/cis-gcp-benchmark-level2#1.0.0-1"],
     "automateApiToken":"K1NdfLHEU8bllp8SFqCVoyqXWQo=",
     "organization": "997482578299",
-    "source": "12345678911",
+    "source": "organizations/123485578567/sources/12345678959696407123",
     "cscc":"path/to/cscckey.json",
     "serviceAccount":{
         "type": "service_account",
