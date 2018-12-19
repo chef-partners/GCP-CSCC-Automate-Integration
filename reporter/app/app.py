@@ -14,9 +14,9 @@ from properties import Properties
 logging.basicConfig(level=logging.INFO, stream=sys.stdout, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 dir = os.getcwd()
 with daemon.DaemonContext(stdout=sys.stdout, stderr=sys.stderr, working_directory=dir): 
-  def main():
+  def main(propertyEnv):
     # Init automate and cscc service with app.properties
-    properties = Properties()
+    properties = Properties(propertyEnv[0])
     automate = AutomateService(properties)
     cscc = CsccService(properties, properties.sourceId)
 
@@ -31,4 +31,4 @@ with daemon.DaemonContext(stdout=sys.stdout, stderr=sys.stderr, working_director
     while True:
       time.sleep(1)
 if __name__ == "__main__":
-  main()
+  main(sys.argv[1:])

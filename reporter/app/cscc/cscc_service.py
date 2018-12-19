@@ -23,7 +23,7 @@ class CsccService:
             self.logger.info(f"Using Provided Security Source {self.securitySource}")
 
     def initializeAutomateSource(self):
-        if (not self.AutomateSourceExists()):
+        if (not self.automateSourceExists()):
             self.logger.info('Creating New Chef Automate Source')
             source = {'name': 'chef_automate', 'display_name':'Chef Automate',
             'description': f"Chef Automate Instance https://{self.properties.automateUrl}/event-feed"}
@@ -52,7 +52,7 @@ class CsccService:
                findings.append(element)
         return findings
     
-    def AutomateSourceExists(self):
+    def automateSourceExists(self):
         self.logger.info('Checking for existing Chef Automate Source')
         for source in self.getAllSources():
             if ('Chef Automate' in source.display_name):
