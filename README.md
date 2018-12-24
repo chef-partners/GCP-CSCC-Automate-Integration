@@ -63,9 +63,9 @@ Add your configuration to "reporter/app/app.properties.json", an example version
 
 #### Launch the App
 
-Once configuration is complete the reporter app can be launch. See sample_app.properties.json for an example of complete configuration.
+Once configuration is complete the reporter app can be launched. See sample_app.properties.json for an example of complete configuration. To run the app using the properties file use the args 'file'.
 
 $ cd reporter
 
-$ python3.7 app/app.py 
+$ python3.7 app/app.py file
 
