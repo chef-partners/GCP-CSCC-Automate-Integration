@@ -35,4 +35,4 @@ class Properties:
     def getMetadataAttribute(self, attributeName):
       headers = {"Metadata-Flavor": "Google", "content-type": "application/json"}
       req = requests.get(f"http://metadata/computeMetadata/v1/instance/attributes/{attributeName}", headers=headers)
-      return req.json()
+      return req.text
