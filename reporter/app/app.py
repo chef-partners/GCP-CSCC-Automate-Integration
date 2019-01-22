@@ -21,7 +21,8 @@ with daemon.DaemonContext(stdout=sys.stdout, stderr=sys.stderr, working_director
     cscc = CsccService(properties, properties.sourceId)
 
     # Start Intial Scan.
-    automate.startScan()
+    if (not properties.scanProfiles): 
+      automate.startScan()
 
     # Start JobListener
     jobListener = JobListener()
