@@ -24,10 +24,12 @@ class Properties:
         self.sourceId = propertiesFile["properties"]["source"]
 
     def buildPropertiesFromGCPMetadata(self):
+        path = f"{os.getcwd()}/app"
         self.automateUrl = self.getMetadataAttribute("automate-ip")
         self.scanProfiles = self.getMetadataAttribute("scan-profiles")
         self.automateApiToken = self.getMetadataAttribute("automate-api-token")
-        self.csccKey = self.getMetadataAttribute("cscc-key")
+        self.outputCsccKey(self.getMetadataAttribute("cscc-key"))
+        self.csccKey = f"{path}/csccKey.json"
         self.serviceAccount = self.getMetadataAttribute("service-account")
         self.organization = self.getMetadataAttribute("organization-id")
         self.sourceId = self.getMetadataAttribute("source-id")
@@ -36,3 +38,7 @@ class Properties:
       headers = {"Metadata-Flavor": "Google", "content-type": "application/json"}
       req = requests.get(f"http://metadata/computeMetadata/v1/instance/attributes/{attributeName}", headers=headers)
       return req.text
+    
+    def outputCsccKey(self, csccKey):
+      with open('csccKey.json') as f:
+        f.write(csccKey)
