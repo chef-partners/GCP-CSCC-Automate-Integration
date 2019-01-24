@@ -6,9 +6,12 @@ requests.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 class Properties:
     def __init__(self, env = None):
-        self.buildPropertiesFromFile()
+      if (env == 'gcp'):
+        self.__buildPropertiesFromGCPMetadata()
+      else:
+        self.__buildPropertiesFromFile()
 
-    def buildPropertiesFromFile(self):
+    def __buildPropertiesFromFile(self):
       path = f"{os.getcwd()}/app"
       with open(os.path.join(path,'app.properties.json')) as p:
         propertiesFile = json.load(p)
@@ -21,7 +24,7 @@ class Properties:
         self.sourceId = propertiesFile["properties"]["source"]
 
     def __buildPropertiesFromGCPMetadata(self):
-        path = f"{os.getcwd()}/app"
+        path = f"{os.getcwd()}/"
         self.automateUrl = self.__getMetadataAttribute("automate-ip")
         self.scanProfiles = self.__getMetadataAttribute("scan-profiles")
         self.automateApiToken = self.__getMetadataAttribute("automate-api-token")
@@ -37,5 +40,5 @@ class Properties:
       return req.text
     
     def __outputCsccKey(self, csccKey):
-      with open('csccKey.json') as f:
+      with open('csccKey.json', 'w+') as f:
         f.write(csccKey)

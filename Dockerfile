@@ -3,6 +3,5 @@ RUN echo "deb http://packages.cloud.google.com/apt cloud-sdk-stretch main" | tee
   curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
   apt-get update && apt-get install -y google-cloud-sdk
 RUN git clone https://github.com/chef-partners/GCP-CSCC-Automate-Integration.git 
-COPY /home/app.properties.json GCP-CSCC-Automate-Integration/reporter/app/
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python" "GCP-CSCC-Automate-Integration/reporter/app/app.py"]
+RUN pip install -r GCP-CSCC-Automate-Integration/reporter/requirements.txt
+ENTRYPOINT python GCP-CSCC-Automate-Integration/reporter/app/app.py gcp
