@@ -22,6 +22,7 @@ class AutomateService:
     startTime = self.__formatScanDateTime(datetime.datetime.utcnow() + datetime.timedelta(minutes = 1))
     body = {"type": "exec", "tags": [], "name": f"cscc-scan-{datetime.datetime.now()}", "profiles": scanProfiles,
     "node_selectors": [{"manager_id": managerId, "filters": []}], "recurrence": f"DTSTART={startTime};FREQ=HOURLY;INTERVAL=1"}
+    self.logger.info(f"Starting Scan on Node Manager: {managerId} with Profiles: {scanProfiles}" )
     return self.apiClient.post("compliance/scanner/jobs", body)
 
   def createCloudManagementService(self, serviceAccount):
