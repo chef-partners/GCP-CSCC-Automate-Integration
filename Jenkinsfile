@@ -37,8 +37,7 @@ spec:
                     sh 'ls -la app'
                     sh 'cat app.properties.json > app/app.properties.json'
                     sh 'cat cscckey.json > app/cscckey.json'
-                    // sh 'pytest -p no:warnings app/test_app.py'
-                    // sh 'echo -n "" > app/app.properties.json'
+                    sh 'pytest -p no:warnings app/test_app.py'
                 }
                 }
                 }
