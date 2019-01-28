@@ -46,8 +46,6 @@ spec:
             }
         }
     }
-        }
-    }
 
   options {
     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10')
