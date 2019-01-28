@@ -37,7 +37,7 @@ class Properties:
     def __getMetadataAttribute(self, attributeName):
       headers = {"Metadata-Flavor": "Google", "content-type": "application/json"}
       req = requests.get(f"http://metadata/computeMetadata/v1/instance/attributes/{attributeName}", headers=headers)
-      return req.text
+      return req.text.rstrip()
     
     def __outputCsccKey(self, csccKey):
       with open('csccKey.json', 'w+') as f:
