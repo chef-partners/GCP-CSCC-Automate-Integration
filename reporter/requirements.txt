@@ -5,3 +5,4 @@ protobuf==3.6.1
 google-cloud-core==0.28.1
 python-dateutil==2.7.5
 python-daemon==2.2.0
+pytest==4.1.1
