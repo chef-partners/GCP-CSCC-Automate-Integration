@@ -39,7 +39,7 @@ spec:
                     sh 'cat cscckey.json > app/cscckey.json'
                     sh 'ls -la app'
                     sh 'pwd'
-                    sh 'cat app/cscckey.json'
+                    sh 'chown 10000:10000 app/cscckey.json'
                     sh 'pytest -p no:warnings app/test_app.py'
                 }
                 }
