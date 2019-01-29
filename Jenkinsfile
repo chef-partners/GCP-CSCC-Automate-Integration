@@ -34,9 +34,10 @@ spec:
                     dir('reporter/') {
                     sh 'cp $APP_PROPS app.properties.json'
                     sh 'cp $CSCC_KEY cscckey.json'
-                    sh 'ls -la app'
+                    sh 'ls -la'
                     sh 'cat app.properties.json > app/app.properties.json'
                     sh 'cat cscckey.json > app/cscckey.json'
+                    sh 'ls -la app'
                     sh 'pytest -p no:warnings app/test_app.py'
                 }
                 }
