@@ -33,14 +33,10 @@ spec:
                 container('cscc') {
                     dir('reporter/') {
                     sh 'cp $APP_PROPS app.properties.json'
-                    sh 'cp $CSCC_KEY cscckey.json'
+                    sh 'cp $CSCC_KEY csccKey.json'
                     sh 'ls -la'
                     sh 'cat app.properties.json > app/app.properties.json'
-                    sh 'cat cscckey.json > app/cscckey.json'
-                    sh 'pwd'
-                    sh 'chown 10000:10000 app/cscckey.json'
-                    sh 'chmod 777 app/cscckey.json'
-                    sh 'ls -la app'
+                    sh 'cat csccKey.json > app/csccKey.json'
                     sh 'pytest -p no:warnings app/test_app.py'
                 }
                 }
