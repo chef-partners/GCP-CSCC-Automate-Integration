@@ -38,6 +38,8 @@ spec:
                     sh 'cat app.properties.json > app/app.properties.json'
                     sh 'cat cscckey.json > app/cscckey.json'
                     sh 'ls -la app'
+                    sh 'pwd'
+                    sh 'cat app/cscckey.json'
                     sh 'pytest -p no:warnings app/test_app.py'
                 }
                 }
