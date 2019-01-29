@@ -37,9 +37,10 @@ spec:
                     sh 'ls -la'
                     sh 'cat app.properties.json > app/app.properties.json'
                     sh 'cat cscckey.json > app/cscckey.json'
-                    sh 'ls -la app'
                     sh 'pwd'
                     sh 'chown 10000:10000 app/cscckey.json'
+                    sh 'chmod 777 app/cscckey.json'
+                    sh 'ls -la app'
                     sh 'pytest -p no:warnings app/test_app.py'
                 }
                 }
