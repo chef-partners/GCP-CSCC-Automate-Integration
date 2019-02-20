@@ -22,7 +22,18 @@ The Chef Automate integration with Google Cloud SCC has been developed in order 
 
 ### Configuration
 
-#### Google GCP Configuration
+#### Getting started on GCP Marketplace
+
+1. On Google Cloud Marketplace select the Chef Automate CSCC integration https://console.cloud.google.com/marketplace/
+
+2. Click Deploy and complete the required fields
+- automate-ip: The public ip address of the Chef Automate instance
+- source-id: The source id of the Chef Source found on the Cloud SCC Security
+- organization-id: The organization id of the GCP organization
+- automate-api-token: The api token from Chef Automate instance
+- cscc-key: The GCP service account json key with cloud security centre access
+
+#### Getting started on local machine
 
 - Assumption that gcloud SDK is installed
 - Create or update a Service Account that has Cloud Compute Instance create role for installing integration tools
