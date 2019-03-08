@@ -18,7 +18,7 @@ class Properties:
         self.automateUrl = propertiesFile["properties"]["automatePublicIp"]
         self.scanProfiles = propertiesFile["properties"]["scanProfiles"]
         self.automateApiToken = propertiesFile["properties"]["automateApiToken"]
-        self.csccKey = f"{path}/csccKey.json"
+        self.csccKey = propertiesFile["properties"]["cscc"]
         self.serviceAccount = propertiesFile["properties"]["serviceAccount"]
         self.organization = propertiesFile["properties"]["organization"]
         self.sourceId = propertiesFile["properties"]["source"]
