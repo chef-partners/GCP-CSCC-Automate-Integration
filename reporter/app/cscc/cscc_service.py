@@ -78,12 +78,11 @@ class CsccService:
         return findings
 
     def buildSourceProperties(self, control):
+        results = json.dumps(control.get('control_results'), sort_keys=True, indent=4).replace('"',"'")
         sourceProperties = {'control_id': struct_pb2.Value(string_value=control.get('control_id')),
-         'code_description': struct_pb2.Value(string_value=control.get('description')),
-         'code_message': struct_pb2.Value(string_value=control.get('message')),
+         'results': struct_pb2.Value(string_value=''.join(results)),
          'profile': struct_pb2.Value(string_value=control.get('profile')),
-         'summary': struct_pb2.Value(string_value=control.get('profile_summary')),
-         'status': struct_pb2.Value(string_value=control.get('status'))}
+         'summary': struct_pb2.Value(string_value=control.get('profile_summary'))}
         return sourceProperties
    
     def timestamp(self, datetime):

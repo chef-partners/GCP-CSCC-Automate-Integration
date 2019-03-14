@@ -55,18 +55,22 @@ class AutomateService:
     for report in reports:
       for profile in report['profiles']:
         for control in profile['controls']:
-          for result in control['results']:
-             if (result['status'] == "failed"):
+          if len(control['results']) > 0 and self.__checkFailedStatus(control['results']):
               failedControl = {'node_name': report['node_name'],
               'node_id' : report['node_id'],
               'end_time': report['end_time'],
               'profile': profile['name'],
               'profile_summary': profile['summary'],
               'control_id': control['id'], 
-              'control_title': control['title'], 
-              'description':result['code_desc'],
-              'message': result['message'],
-              'status': result['status']}
+              'control_title': control['title'],
+              'control_results': []}
+              for result in control['results']:
+                if (result['status'] == "failed"):
+                  controlResult = {}
+                  controlResult['status'] = result['status']
+                  controlResult['description'] = result['code_desc']
+                  controlResult['message'] = result['message']
+                  failedControl['control_results'].append(controlResult)
               failedControls.append(failedControl)
     return failedControls
 
@@ -133,4 +137,13 @@ class AutomateService:
     else:
       self.lastSentReports.extend(reportList)
       return reportList
-    
+
+  def __checkFailedStatus(self, results):
+    failed = False
+    for result in results:
+      if result['status'] == 'failed':
+        failed = True
+    return failed
+
+
+
