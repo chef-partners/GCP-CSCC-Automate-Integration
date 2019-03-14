@@ -15,10 +15,3 @@ class JobListener(BackgroundScheduler):
       csccService.createFinding(finding)
     if len(findings) > 0:
        self.logger.info(f"Creating {len(findings)} findings")
-
-    
-
-      
-
-
-

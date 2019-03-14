@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 from google.protobuf import empty_pb2, struct_pb2, timestamp_pb2
 
 class TestCsccService:
+    # Tests that findings built from an Automate Report equals the number of Failed Controls
     def testBuildFindings(self):
         #SETUP
         properties = Properties()
@@ -26,8 +27,9 @@ class TestCsccService:
 
         # THEN cscc findings can be built
         findings = cscc.buildFindings(failedControls)
-        assert len(findings) == 80 
+        assert len(findings) == 23
 
+    # Tests that a finding is successfully created in Google Cloud Security Centre
     @pytest.mark.skip(reason="Creates a new finding on cscc. Don't run until deletion is enabled.")
     def testCreateFindings(self):
         #SETUP

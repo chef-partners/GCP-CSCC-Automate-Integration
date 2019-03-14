@@ -13,7 +13,7 @@ from properties import Properties
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 dir = os.getcwd()
-with daemon.DaemonContext(stdout=sys.stdout, stderr=sys.stderr, working_directory=dir): 
+with daemon.DaemonContext(stdout=sys.stdout, stderr=sys.stderr, working_directory=dir):
   def main(propertyEnv):
     # Init automate and cscc service with app.properties
     properties = Properties(propertyEnv[0])
@@ -27,7 +27,7 @@ with daemon.DaemonContext(stdout=sys.stdout, stderr=sys.stderr, working_director
     # Start JobListener
     jobListener = JobListener()
     jobListener.start()
-    jobListener.add_job(jobListener.listen, 'interval', seconds=60, args=[automate, cscc])
+    jobListener.add_job(jobListener.listen, 'interval', seconds=120, args=[automate, cscc], max_instances=2)
 
     while True:
       time.sleep(1)
