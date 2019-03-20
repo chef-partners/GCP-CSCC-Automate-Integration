@@ -1,10 +1,13 @@
 import json
+import logging
 import os
 import requests
 from urllib3.exceptions import InsecureRequestWarning
 requests.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 class Properties:
+    logger = logging.getLogger(__name__)
+
     def __init__(self, env = None):
       if (env == 'gcp'):
         self.__buildPropertiesFromGCPMetadata()
@@ -33,6 +36,7 @@ class Properties:
         self.serviceAccount = self.__getMetadataAttribute("service-account")
         self.organization = self.__getMetadataAttribute("organization-id")
         self.sourceId = self.__getMetadataAttribute("source-id")
+        self.__log_properties()
 
     def __getMetadataAttribute(self, attributeName):
       headers = {"Metadata-Flavor": "Google", "content-type": "application/json"}
@@ -42,3 +46,11 @@ class Properties:
     def __outputCsccKey(self, csccKey):
       with open('csccKey.json', 'w+') as f:
         f.write(csccKey)
+
+    def __log_properties(self):
+      self.logger.info(f"Automate Url: {self.automateUrl}")
+      self.logger.info(f"Scan Profiles: {self.scanProfiles}")
+      self.logger.info(f"Automate Api Token: {self.automateApiToken}")
+      self.logger.info(f"Source ID: {self.sourceId}")
+
+
