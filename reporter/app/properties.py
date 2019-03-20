@@ -1,3 +1,4 @@
+import ast
 import json
 import logging
 import os
@@ -29,7 +30,7 @@ class Properties:
     def __buildPropertiesFromGCPMetadata(self):
         path = f"{os.getcwd()}/"
         self.automateUrl = self.__getMetadataAttribute("automate-ip")
-        self.scanProfiles = self.__getMetadataAttribute("scan-profiles").split(",")
+        self.scanProfiles = ast.literal_eval(self.__getMetadataAttribute("scan-profiles"))
         self.automateApiToken = self.__getMetadataAttribute("automate-api-token")
         self.__outputCsccKey(self.__getMetadataAttribute("cscc-key"))
         self.csccKey = f"{path}/csccKey.json"
@@ -40,7 +41,7 @@ class Properties:
 
     def __getMetadataAttribute(self, attributeName):
       headers = {"Metadata-Flavor": "Google", "content-type": "application/json"}
-      req = requests.get(f"http://metadata/computeMetadata/v1/instance/attributes/{attributeName}", headers=headers)
+      req = requests.get("http://metadata/computeMetadata/v1/instance/attributes/scan-profiles", headers=headers)
       return req.text.rstrip()
     
     def __outputCsccKey(self, csccKey):
