@@ -44,7 +44,7 @@ class AutomateService:
 
   def addScanProfiles(self, profiles):
     for p in profiles:
-      self.logger.info(f"Adding scan profile: {profile}")
+      self.logger.info(f"Adding scan profile: {profiles}")
       profile = p.split("admin/")[1].split("#")
       profileName = profile[0]
       profileVersion = profile[1]
