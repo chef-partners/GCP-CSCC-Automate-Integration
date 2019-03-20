@@ -41,7 +41,7 @@ class Properties:
 
     def __getMetadataAttribute(self, attributeName):
       headers = {"Metadata-Flavor": "Google", "content-type": "application/json"}
-      req = requests.get("http://metadata/computeMetadata/v1/instance/attributes/scan-profiles", headers=headers)
+      req = requests.get(f"http://metadata/computeMetadata/v1/instance/attributes/{attributeName}", headers=headers)
       return req.text.rstrip()
     
     def __outputCsccKey(self, csccKey):
