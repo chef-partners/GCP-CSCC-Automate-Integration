@@ -44,11 +44,16 @@ class AutomateService:
 
   def addScanProfiles(self, profiles):
     for p in profiles:
+      self.logger.info(f"Adding scan profile: {profile}")
       profile = p.split("admin/")[1].split("#")
       profileName = profile[0]
       profileVersion = profile[1]
       body = {"name":f"{profileName}","version":f"{profileVersion}"}
-      self.apiClient.post("compliance/profiles?owner=admin", body)
+      try:
+        self.apiClient.post("compliance/profiles?owner=admin", body)
+      except Exception as e:
+        self.logger.exception(e)
+        self.logger.error(f"Failed to add Scan Profile. Provided profile {body} invalid")
 
   def getFailedControls(self, reports):
     failedControls = []
@@ -144,6 +149,11 @@ class AutomateService:
       if result['status'] == 'failed':
         failed = True
     return failed
+
+  def useDefaultScanProfile(self):
+    self.logger.info("Using default profile: cis-gcp-benchmark-level1")
+    default = {'"name": "cis-gcp-benchmark-level1","version": "1.0.0-1"'}
+    self.apiClient.post("compliance/profiles?owner=admin", default)
 
 
 
