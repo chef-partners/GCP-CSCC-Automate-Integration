@@ -4,7 +4,7 @@
 
 This guide helps install and configure the integration of Chef Automate with [Google's Cloud Security Command Center](https://cloud.google.com/security-command-center/)
 
-### Chef Automate - Google Cloud SCC Integration (Beta)
+### Chef Automate - Google Cloud SCC Integration
 
 The integration between a Chef Automate server and Google Cloud SCC requires the following:
 
