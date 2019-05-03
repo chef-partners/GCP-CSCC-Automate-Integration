@@ -17,7 +17,7 @@ The Chef Automate integration with Google Cloud SCC has been developed in order 
 #### Pre-requisites
 
 * [Google Cloud Subscription](https://cloud.google.com/)
-* [Google Cloud SCC (Beta) Feature Enabled](https://cloud.google.com/security-command-center/)
+* [Google Cloud SCC Feature Enabled](https://cloud.google.com/security-command-center/)
 * [Chef automate server installation](https://docs.chef.io/chef_automate.html)
 
 ### Configuration
