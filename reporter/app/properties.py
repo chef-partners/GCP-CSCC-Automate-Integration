@@ -30,7 +30,10 @@ class Properties:
     def __buildPropertiesFromGCPMetadata(self):
         path = f"{os.getcwd()}/"
         self.automateUrl = self.__getMetadataAttribute("automate-ip")
-        self.scanProfiles = ast.literal_eval(self.__getMetadataAttribute("scan-profiles"))
+        self.scanProfiles = []
+        metadata_profiles = self.__getMetadataAttribute("scan-profiles")
+        if not metadata_profiles:
+            self.scanProfiles = ast.literal_eval(metadata_profiles))
         self.automateApiToken = self.__getMetadataAttribute("automate-api-token")
         self.__outputCsccKey(self.__getMetadataAttribute("cscc-key"))
         self.csccKey = f"{path}/csccKey.json"
